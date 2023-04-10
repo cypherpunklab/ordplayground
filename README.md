@@ -1,6 +1,6 @@
 # ordplayground
 
-A regtest playground to have a dev enviroment to test out inscriptions incribing and running the ord explorer in regtest as well
+A regtest playground to have a dev enviroment to test out inscriptions incribing and running the ord explorer in regtest
 
 - [x] Bitcoin binary running in docker
 - [ ] Ord binary running in docker
