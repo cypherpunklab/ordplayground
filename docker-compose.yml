@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  bitcoin:
+    build:
+      context: ./bitcoin
+      dockerfile: Dockerfile
+    ports:
+      - '18443:18443'
+      - '18444:18444'
+    volumes:
+      - ./bitcoin-data:/root/.bitcoin
+    networks:
+      - bitcoin-network
+
+  ord:
+    build:
+      context: ./ord
+      dockerfile: Dockerfile
+    depends_on:
+      - bitcoin
+    networks:
+      - bitcoin-network
+
+networks:
+  bitcoin-network:
+    driver: bridge
